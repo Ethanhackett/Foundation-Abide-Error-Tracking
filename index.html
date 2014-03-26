@@ -1,0 +1,80 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>Welcome to Foundation</h1>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <form data-abide id="myForm">
+          <div class="name-field">
+            <label>Your name <small>required</small>
+              <input type="text" required pattern="[a-zA-Z]+">
+            </label>
+            <small class="error">Name is required and must be a string.</small>
+          </div>
+          <div class="email-field">
+            <label>Email <small>required</small>
+              <input type="email" required>
+            </label>
+            <small class="error">An email address is required.</small>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="large-12 columns">
+      	<div id="output"></div>
+      </div>
+    </div>
+    
+        
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/foundation.abideevents.js"></script>
+    <script>
+      $(document).foundation();
+      
+      $( document ).ready(function() {
+	      $('#myForm')
+	        .on('invalid', function () {
+	         	$(this).abideevents();
+	         	
+	        });
+      });
+      
+    </script>
+    
+	<script>
+	
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-7404688-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    
+	    //ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    
+	    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+	    
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>	
+    
+  </body>
+</html>
